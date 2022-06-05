@@ -25,7 +25,7 @@ async def on_ready():
 #!info
 @bot.command(name='info', help='bot info')
 async def test(ctx):
-    response = 'coin-bot'
+    response = 'vservant'
     await ctx.send(response)
 
 #!rise
