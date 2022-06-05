@@ -30,14 +30,16 @@ async def test(ctx):
 
 #!rise
 @bot.command(name='rise')
-async def test(ctx, name, coins):
+async def test(ctx, name):
+    await ctx.send("Your command has been received and it shall be done.")
     Message = vrising.start_server()
     print(Message)
     await ctx.send(Message)
 
 #!fall
 @bot.command(name='fall')
-async def test(ctx, name, coins):
+async def test(ctx, name):
+    await ctx.send("Your command has been received and it shall be done.")
     Message = vrising.stop_server()
     print(Message)
     await ctx.send(Message)
