@@ -41,3 +41,5 @@ async def test(ctx, name, coins):
     Message = vrising.stop_server()
     print(Message)
     await ctx.send(Message)
+    
+bot.run(TOKEN)
