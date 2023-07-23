@@ -2,3 +2,5 @@
 meta_data.json
 .env
 */*.tfvars
+*/.terraform.lock.hcl
+*/.terraform/*
