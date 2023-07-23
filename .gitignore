@@ -1,4 +1,4 @@
 /venv/*
 meta_data.json
 .env
-.tfvar
+.tfvars
