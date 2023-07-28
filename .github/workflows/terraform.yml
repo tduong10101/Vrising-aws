@@ -36,7 +36,10 @@ jobs:
     
     # change to terraform directory
     - name: cd to terraform
-      run: cd ${GITHUB_WORKSPACE}/terraform/
+      run: |
+        cd ${GITHUB_WORKSPACE}/terraform/
+        pwd
+        echo "${GITHUB_WORKSPACE}/terraform/" 
     
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
