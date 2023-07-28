@@ -16,7 +16,7 @@ terraform {
 provider "aws" {
     region = "ap-southeast-2"
     assume_role {
-        role_arn = var.tf_role_arn
+        role_arn = "arn:aws:iam::069363837566:role/vrisng-github-terraform"
     }
 }
 
