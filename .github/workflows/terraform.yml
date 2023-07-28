@@ -47,11 +47,13 @@ jobs:
     # Generate tfvars
     - name: Generate vars.tfvars
       run: |
-        cat > "vars.tfvars" <<EOF
+        cat > "./vars.tfvars" <<EOF
           home_cdir_block = ${{ secrets.HOME_CDIR_BLOCK }}
           name = ${{ vars.NAME }}
           password = ${{ secrets.PASSWORD }}
         EOF
+        
+        cat ./vars.tfvars
 
     # Checks that all Terraform configuration files adhere to a canonical format
 #     - name: Terraform Format
