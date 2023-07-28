@@ -9,6 +9,7 @@ on:
             options:
             - plan
             - apply
+            - destroy
 permissions:
   contents: read
   id-token: write   # This is required for requesting the JWT
@@ -69,3 +70,8 @@ jobs:
     - name: Terraform Apply
       if: ${{ inputs.terraform_job == 'apply' }} 
       run: terraform apply -var-file=vars.tfvars -auto-approve -input=false
+      
+    # Generates an execution plan for Terraform
+    - name: Terraform Destroy
+      if: ${{ inputs.terraform_job == 'destroy' }} 
+      run: terraform destroy -var-file=vars.tfvars -auto-approve -input=false
