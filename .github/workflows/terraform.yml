@@ -50,7 +50,6 @@ jobs:
           home_cdir_block = ${{ secrets.HOME_CDIR_BLOCK }}
           name = ${{ vars.NAME }}
           password = ${{ secrets.PASSWORD }}
-          tf_role_arn = ${{ vars.TF_ROLE_ARN }}
         EOF
 
     # Generates an execution plan for Terraform
