@@ -67,5 +67,5 @@ jobs:
     
     # Generates an execution plan for Terraform
     - name: Terraform Apply
-      if: ${{ inputs.terraform_job }} == "apply"
+      if: ${{ inputs.terraform_job == "apply" }} 
       run: terraform apply -var-file=vars.tfvars -auto-approve -input=false
