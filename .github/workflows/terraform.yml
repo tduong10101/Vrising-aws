@@ -49,8 +49,8 @@ jobs:
       run: |
         cat > "./vars.tfvars" <<EOF
           home_cdir_block = ${{ secrets.HOME_CDIR_BLOCK }}
-          name = ${{ vars.NAME }}
-          password = ${{ secrets.PASSWORD }}
+          name = "${{ vars.NAME }}"
+          password = "${{ secrets.PASSWORD }}"
         EOF
         
         cat ./vars.tfvars
