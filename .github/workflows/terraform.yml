@@ -5,7 +5,7 @@ on:
   pull_request:
   workflow_dispatch:
     inputs:
-      choice:
+      terraform_job:
             type: choice
             description: Terraform
             options:
@@ -46,11 +46,16 @@ jobs:
     - name: Generate vars.tfvars
       run: |
         cat > "vars.tfvars" <<EOF
-          home_cdir_block = ${{ secrets.home_cdir_block }}
-          name = ${{ vars.name }}
-          password = ${{ secrets.password }}
+          home_cdir_block = ${{ secrets.HOME_CDIR_BLOCK }}
+          name = ${{ vars.NAME }}
+          password = ${{ secrets.PASSWORD }}
         EOF
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
+      run: terraform plan -var-file=vars.tfvars -input=false
+    
+    # Generates an execution plan for Terraform
+    - name: Terraform Apply
+      if: ${{ inputs.terraform_job }} == "apply"
       run: terraform plan -var-file=vars.tfvars -input=false
