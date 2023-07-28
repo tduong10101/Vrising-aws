@@ -15,7 +15,3 @@ variable "password" {
     type = string
     sensitive = true
 }
-
-variable "tf_role_arn" {
-    type = string
-}
