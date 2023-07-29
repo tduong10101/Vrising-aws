@@ -46,6 +46,25 @@ resource "aws_security_group" "vrising-sg" {
     }
 }
 
+
+
+resource "aws_cloudwatch_metric_alarm" "vrisng-network-in-alarm" {
+    alarm_name                = "vrisng-network-in-alarm"
+    comparison_operator       = "LessThanOrEqualToThreshold"
+    evaluation_periods        = 3
+    metric_name               = "NetworkPacketsIn"
+    namespace                 = "AWS/EC2"
+    period                    = 300
+    statistic                 = "Maximum"
+    threshold                 = 250
+    alarm_description         = "This metric monitors ec2 cpu utilization"
+    dimensions = {
+        InstanceId = resource.aws_instance.vrising-instance.id
+    }
+    actions_enabled     = "true"
+    alarm_actions       = ["arn:aws:automate:ap-southeast-2:ec2:stop"]
+}
+
 output "instance-ip" {
     value = resource.aws_instance.vrising-instance.public_ip
 }
