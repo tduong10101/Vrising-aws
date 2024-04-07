@@ -1,5 +1,5 @@
 resource "aws_instance" "vrising-instance" {
-    ami = "ami-0310483fb2b488153"
+    ami = "ami-09c8d5d747253fb7a"
     instance_type = "t3.medium"
     root_block_device {
         delete_on_termination = true
