@@ -315,13 +315,13 @@ echo " "
 echo "steam_appid: "`cat $s/steam_appid.txt`
 
 echo " "
-unsupported_file=""
+unsupporteFile=""
 if ! grep -o 'avx[^ ]*' /proc/cpuinfo; then
-	unsupported_file="VRisingServer_Data/Plugins/x86_64/lib_burst_generated.dll"
-	echo "AVX or AVX2 not supported; Check if unsupported ${unsupported_file} exists"
-	if [ -f "${s}/${unsupported_file}" ]; then
-		echo "Changing ${unsupported_file} as attempt to fix issues..."
-		mv "${s}/${unsupported_file}" "${s}/${unsupported_file}.bak"
+	unsupporteFile="VRisingServer_Data/Plugins/x86_64/lib_burst_generated.dll"
+	echo "AVX or AVX2 not supported; Check if unsupported ${unsupporteFile} exists"
+	if [ -f "${s}/${unsupporteFile}" ]; then
+		echo "Changing ${unsupporteFile} as attempt to fix issues..."
+		mv "${s}/${unsupporteFile}" "${s}/${unsupporteFile}.bak"
 	fi
 fi
 
