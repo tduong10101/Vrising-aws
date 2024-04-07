@@ -68,3 +68,6 @@ resource "aws_cloudwatch_metric_alarm" "vrisng-network-in-alarm" {
 output "instance-ip" {
     value = resource.aws_instance.vrising-instance.public_ip
 }
+output "instance-id" {
+    value = resource.aws_instance.vrising-instance.id
+}
