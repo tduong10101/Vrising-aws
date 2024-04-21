@@ -20,21 +20,21 @@ resource "aws_security_group" "vrising-sg" {
         from_port = 9876
         to_port = 9876
         protocol = "udp"
-        cidr_blocks = var.home_cdir_block
+        cidr_blocks = ["0.0.0.0/0"]
     }
     ingress {
         description = "vrising-port-allow-9877"
         from_port = 9877
         to_port = 9877
         protocol = "udp"
-        cidr_blocks = var.home_cdir_block
+        cidr_blocks = ["0.0.0.0/0"]
     }
     ingress {
         description = "ssh-allow"
         from_port = 22
         to_port = 22
         protocol = "tcp"
-        cidr_blocks = var.home_cdir_block
+        cidr_blocks = ["0.0.0.0/0"]
     }
 
     egress {
