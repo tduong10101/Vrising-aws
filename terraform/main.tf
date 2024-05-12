@@ -1,6 +1,6 @@
 resource "aws_instance" "vrising-instance" {
     ami = "ami-09c8d5d747253fb7a"
-    instance_type = "t3.medium"
+    instance_type = "t3.large"
     root_block_device {
         delete_on_termination = true
         volume_size = 16
